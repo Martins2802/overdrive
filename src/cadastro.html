@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        @media (min-width: 768px) {
+          .md\:h-screen {
+           height: calc(100vh + 280px);
+           }
+        }
+    </style>
+</head>
+<body>
+   <div class="flex">
+        <div class="hidden md:flex-1 md:bg-zinc-900 md:flex md:justify-center md:items-center">
+            <img src="images/logo.png" alt="logo da overdrive">
+        </div>
+        <div class="flex-1 flex justify-center items-center">
+            <div class="flex justify-center items-center flex-col md:w-1/2 md:inline md:h-auto">
+                <div class="flex justify-center">
+                   <h1 class="text-2xl font-bold text-center mb-5 text-red-600 flex">CADASTRO</h1>
+                   <img src="images/logo.png" class="w-10 h-10 ml-2 md:hidden">
+                </div>
+                <form action="#" method="post" class="flex flex-col" id="loginForm">
+                    <label for="nome" class="text-red-600">Nome Completo</label>
+                    <input type="text" placeholder="nome" name="nome" id="nome" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="cpf" class="text-red-600">CPF</label>
+                    <input type="text" required placeholder="cpf" min="11" max="11" autocomplete="off" name="cpf" id="cpf" class="bg-gray-100 p-2 mb-3 outline-none border border-zinc-900">
+                    <label for="senha" class="text-red-600">Senha</label>
+                    <input type="password" required placeholder="senha" name="senha" id="senha" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="estados" class="text-red-600">Estado</label>
+                    <select name="estados" required id="estados" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                        <option value="">Selecione um estado</option>
+                        <option value="AC">Acre (AC)</option>
+                        <option value="AL">Alagoas (AL)</option>
+                        <option value="AP">Amapá (AP)</option>
+                        <option value="AM">Amazonas (AM)</option>
+                        <option value="BA">Bahia (BA)</option>
+                        <option value="CE">Ceará (CE)</option>
+                        <option value="DF">Distrito Federal (DF)</option>
+                        <option value="ES">Espírito Santo (ES)</option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MA">Maranhão (MA)</option>
+                        <option value="MT">Mato Grosso (MT)</option>
+                        <option value="MS">Mato Grosso do Sul (MS)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="PA">Pará (PA)</option>
+                        <option value="PB">Paraíba (PB)</option>
+                        <option value="PR">Paraná (PR)</option>
+                        <option value="PE">Pernambuco (PE)</option>
+                        <option value="PI">Piauí (PI)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="RN">Rio Grande do Norte (RN)</option>
+                        <option value="RS">Rio Grande do Sul (RS)</option>
+                        <option value="RO">Rondônia (RO)</option>
+                        <option value="RR">Roraima (RR)</option>
+                        <option value="SC">Santa Catarina (SC)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="SE">Sergipe (SE)</option>
+                        <option value="TO">Tocantins (TO)</option>
+                    </select>                    
+                    <label for="cidade" class="text-red-600">Cidade</label>
+                    <input type="text" placeholder="cidade" name="cidade" id="cidade" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="bairro" class="text-red-600">Bairro</label>
+                    <input type="text" placeholder="bairro" name="bairro" id="bairro" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="logradouro" class="text-red-600">Logradouro</label>
+                    <input type="text" placeholder="logradouro" required name="logradouro" id="logradouro" class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="cnh" class="text-red-600">CNH</label>
+                    <select name="cnh" id="cnh" required class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                        <option value="">Selecione um tipo de CNH</option>
+                        <option value="N">Não possuo CNH</option>
+                        <option value="A">Tipo A: Motocicletas</option>
+                        <option value="B">Tipo B: Veículos de passeio</option>
+                        <option value="C">Tipo C: Veículos de carga</option>
+                        <option value="D">Tipo D: Veículos de passageiros</option>
+                        <option value="E">Tipo E: Veículos com trailer ou carreta</option>
+                    </select>
+                    <label for="telefone" class="text-red-600">Telefone</label>
+                    <input type="tel" name="telefone" placeholder="telefone" id="telefone"  class="bg-gray-100 mb-3 p-2 outline-none border border-zinc-900">
+                    <label for="carro" class="text-red-600">Carro</label>
+                    <input type="text" placeholder="carro" name="carro" id="carro" class="bg-gray-100 mb-10 p-2 outline-none border border-zinc-900">
+                    <input type="submit" value="Cadastrar" class="bg-red-600 p-2 mb-3 text-white cursor-pointer transition-all duration-500 hover:bg-red-500">
+                </form>
+                <p class="mb-5">Já possui cadastro? <a href="login.html" class="text-red-600">Logar</a></p>
+            </div>
+        </div> 
+   </div>
+</body>
+</html>
