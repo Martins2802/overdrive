@@ -1,6 +1,10 @@
-## lista de erros
+## Como utilizar
 
-001 - DbConecction.php - Erro de conexão com o banco de dados
-002 - LoadPageAdm.php - Página não encontrada
-003 - LoadPageAdm.php - Controller não encontrada
-004 - LoadPageAdm.php - Método não encontrado
+### Exemplo de usuário admin:
+    cpf: 111.111.111-11
+    senha: 12345678
+
+### Exemplo de usuário comum:
+
+    cpf: 555.555.555-55
+    senha: segredo123
