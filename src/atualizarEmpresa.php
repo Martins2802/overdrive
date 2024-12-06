@@ -5,10 +5,13 @@ require_once 'classes/Empresa.php';
 require_once 'classes/Endereco.php';
 require_once 'classes/EnderecoDao.php';
 
-if(EmpresaDao::verificaDuplicidade($_POST['cnpj'])) {
+if($_POST['cnpj'] != $_GET['cnpj']) {
+    if(EmpresaDao::verificaDuplicidade($_POST['cnpj'])) {
     echo '<script>window.alert("O CNPJ já existe!"); history.back()</script>';
     exit();
+    }
 }
+
 
 $endereco = new Endereco();
 $endereco->setCep($_POST['cep']);
