@@ -1,3 +1,19 @@
+<?php
+    require_once '../listas.php';
+    session_start();
+    $_SESSION['logged'] = $_SESSION['logged'] ?? false;
+
+    if(!$_SESSION['logged']) {
+        header('Location: login.php');
+        exit();
+    }
+
+    if($_SESSION['tipo'] == 'Comum') {
+        header('Location: index.php');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

@@ -34,4 +34,4 @@ if(EnderecoDao::verifyEnd($endereco) == 0) {
 
 EmpresaDao::create($empresa);
 
-header('Location: paginas/cadastro_empresa.php');
+echo '<script>window.alert("Empresa cadastrada!"); window.location.href="paginas/cadastro_empesa.php"</script>';

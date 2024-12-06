@@ -1,6 +1,19 @@
  <?php
- require_once '../listas.php';
+    session_start();
+    require_once '../listas.php';
     require_once '../classes/EmpresaDao.php';
+
+    
+    $_SESSION['logged'] = $_SESSION['logged'] ?? false;
+
+    if(!$_SESSION['logged']) {
+        header('Location: login.php');
+        exit();
+    }
+
+    if($_SESSION['tipo'] == 'Comum') {
+        header('Location: index.php');
+    }
 
     $dados = EmpresaDao::read();
     $estados = [

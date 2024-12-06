@@ -52,6 +52,18 @@ class EmpresaDao
         header("Location: ../paginas/login.php?error=1");
     }
 
+    public static function search($search) {
+        $search = "%" . $search . "%";
+        $sql = "SELECT * FROM enterprise INNER JOIN endereco ON 
+        enterprise.id_address = endereco.id WHERE nome_emp LIKE ?";
+        $stmt = Connection::getConnection()->prepare($sql);
+        $stmt->bindValue(1,$search);
+        $stmt->execute();
+        $retorno = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $retorno;
+    }
+
     public static function verificaDuplicidade($cnpj) {
         $sql = 'SELECT * FROM enterprise WHERE cnpj = ?';
         $stmt = Connection::getConnection()->prepare($sql);

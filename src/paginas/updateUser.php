@@ -1,6 +1,19 @@
 <?php
+    session_start();
     require_once '../listas.php';
     require_once '../classes/UsuarioDao.php';
+
+    
+    $_SESSION['logged'] = $_SESSION['logged'] ?? false;
+
+    if(!$_SESSION['logged']) {
+        header('Location: login.php');
+        exit();
+    }
+
+    if($_SESSION['tipo'] == 'Comum') {
+        header('Location: index.php');
+    }
 
     $dados = UsuarioDao::read();
     $estados = [

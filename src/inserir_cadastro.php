@@ -41,4 +41,4 @@ if($usuario->getCnpj() != NULL) {
     $usuario->setStatus(1);
 }
 
-header('Location: paginas/cadastro.php');
+echo '<script>window.alert("Usuário cadastrado!"); window.location.href="paginas/cadastro.php"</script>';

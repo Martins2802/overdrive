@@ -92,6 +92,18 @@ class UsuarioDao
         return 0;
     }
 
+    public static function search($search) {
+        $search = "%" . $search . "%";
+        $sql = "SELECT * FROM users INNER JOIN endereco ON users.id_address = endereco.id
+        INNER JOIN enterprise ON users.cnpj = enterprise.cnpj WHERE nome LIKE ?";
+        $stmt = Connection::getConnection()->prepare($sql);
+        $stmt->bindValue(1,$search);
+        $stmt->execute();
+        $retorno = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $retorno;
+    }
+
     public static function verificaDuplicidade($cpf) {
         $sql = 'SELECT * FROM users WHERE cpf = ?';
         $stmt = Connection::getConnection()->prepare($sql);

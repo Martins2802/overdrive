@@ -15,6 +15,13 @@
     require_once '../classes/EmpresaDao.php';
     $empresa = EmpresaDao::read();
 
+    $valor_search = $_POST['search'] ?? '';
+    
+    if(isset($_POST['search'])) {
+      $card = UsuarioDao::search($_POST['search']);
+      $empresa = EmpresaDao::search($_POST['search']);
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -93,9 +100,9 @@
             <a class="nav-link" style="cursor:pointer" href="?logout=1">Sair</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="campo">
-          <button class="btn btn-outline-success border-danger" type="submit" id="botao">Search</button>
+        <form class="d-flex" role="search" method="post" action="<?=$_SERVER['PHP_SELF']?>">
+          <input class="form-control me-2" value="<?=$valor_search?>" type="text" name="search" placeholder="Search" aria-label="Search" id="campo">
+          <input type="submit" class="btn btn-outline-success border-danger" type="submit" id="botao" value="Search">
         </form>
       </div>
     </div>
