@@ -1,6 +1,6 @@
 ## Como utilizar
- 1. Baixe o WampServer no site oficial e siga as instruções para instalar na sua máquina
- 2. Baixe a base de dados overdrive.sql
+ 1. Clone o projeto na sua máquina
+ 2. Baixe o [WampServer](https://wampserver.aviatechno.net/) no site oficial e siga as instruções para instalar na sua máquina
  3. Com o Wampserver instalado, inicie o mesmo (isso pode ser feito clicando no ícone da área de trabalho ou na barra de tarefas)
  4. Garanta que o servidor Mysql esteja funcionando corretamente (geralmente o wamp apresenta um ícone verde ou laranja em caso de êxito)
  5. Com o wampserver, inicialize o phpmyadmin e logue com usuário e senha do seu servidor Mysql. Por padrão, o usuário é root e a senha fica em branco
